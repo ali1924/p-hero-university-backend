@@ -1,14 +1,14 @@
 import express from 'express'
-import { StudentControllers } from './student.controller'
+import { StudentControllers } from './stutdent.controller'
 const router = express.Router()
 
-//create-student
+// post for create student
+//will call controller function
 router.post('/create-student', StudentControllers.createStudent)
 
-//get all student
-router.get('/', StudentControllers.getAllStudent)
-
+//get all data
+router.get('/', StudentControllers.getAllStudents)
 //get single student
-router.get('/:studentId',S)
+router.get('/:studentId', StudentControllers.getSingleStudent)
 
 export const StudentRoutes = router

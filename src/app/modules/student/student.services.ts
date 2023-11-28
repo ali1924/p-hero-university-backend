@@ -1,28 +1,28 @@
 import { Student } from './student.interface'
 import { StudentModel } from './student.model'
 
-const createStudent = async (student: Student) => {
-  //1.get model
+const createStudentIntoDB = async (student: Student) => {
+  //query chalate hobe model er upor
   const result = await StudentModel.create(student)
-  //   2. return result
   return result
 }
 
-//get all students
-const getAllStudentFromDB = async () => {
-  // 1.get data from model
+//get all data
+const getAllStudentsFromDB = async () => {
+  //1. get data from model
   const result = await StudentModel.find()
+  // 2.return result
   return result
 }
 
-//get signle student from DB
+//get single student
 const getSingleStudentDB = async (id: string) => {
-  //1. get data using id from model
+  // 1. get data using id from model
   const result = await StudentModel.findOne({ _id: id })
   return result
 }
 export const StudentServices = {
-  createStudent,
-  getAllStudentFromDB,
+  createStudentIntoDB,
+  getAllStudentsFromDB,
   getSingleStudentDB,
 }
